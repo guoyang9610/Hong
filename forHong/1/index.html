@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div style="background:url(baby.jpg);background-size: contain; display:block;width:100%;height: 100%;"
+	 class="img-responsive">	
+	
+		<div id="mainDiv">
+			<div id="content">
+				<div id="code">
+					
+					<span class="comments">For Liuhonghong：</span><br />
+					<span class="space"/><span class="comment">不知不觉走过了<i><b>3年</b></i>之久的恋爱时光，</span><br />
+					<span class="space"/><span class="comment">3年的道路上酸甜苦辣经历的不在少数，</span><br />
+					<span class="space"/><span class="comment">这几年也委屈了你跟我一起受过的苦；</span><br />
+					<span class="space"/><span class="comment">不用怀疑，你是我心中最坚定的那一份信仰，<br /></span>
+					<span class="space"/><span class="comment">我会努力工作、努力生活，希望能早点与你步入婚姻的殿堂，<br /></span>
+					<span class="space"/><span class="comment">那一美好的愿景，应该离我们不远了吧。。<br /></span>
+					<span class="space"/><span class="comment">怀念我们那年的点点滴滴，仿佛是在昨天；<br /></span>
+					<span class="space"/><span class="comment">跟你在一起我没有后悔过，没有抱怨过，一直是坚定的想法！<br /></span>
+					<span class="space"/><span class="comment">我期待这一生与你一起走过，<br /></span>
+					<span class="space"/><span class="comment">走到尽头再看一下生活的轨迹，是那么的沧桑与美好。<br /></span>
+					<span class="space"/><span class="comment">我期待与你慢慢变老，<br /></span>
+					<span class="space"/><span class="comment">一直憧憬着那么一天我们还能一起做想做的事情，<br /></span>
+					<span class="space"/><span class="comment">还能满载着一生的幸福快乐。<br /></span>
+					<span class="keyword">希望我们能永远善良、钟情、善良、积极~<br />
+					<span class="space"/>希望还能吹着海风流着汗，为了找一家吃饭的店走的满身汗<br />
+					<span class="space"/>怀念着下班回到家，满屋子充满了大蒜的味道。<br />
+					<span class="space"/>愿我们所偶的理想都能如期而至！<br />
+					<span class="space"/>所有我们经历的点点滴滴，<br />都是我们一辈子最美的回忆。</span> <br />
+					<br />
+				</div>
+				<div id="loveHeart">
+					<canvas id="garden"></canvas>
+					<div id="words">
+						<div id="messages">
+							da红,我爱你！
+							<div id="elapseClock"></div>
+						</div>
+						<div id="loveu">
+							you are everything to me.<br/>
+							<div class="signature">- youYangge</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2016, 12, 1);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
